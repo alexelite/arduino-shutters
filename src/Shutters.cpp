@@ -222,6 +222,8 @@ Shutters& Shutters::loop() {
 
   // here, level is known
 
+  if (_targetLevel == _currentLevel) _targetLevel = LEVEL_NONE;
+
   if (_state == STATE_IDLE && _targetLevel == LEVEL_NONE) return *this; // nothing to do
 
   if (_state == STATE_CALIBRATING) {
